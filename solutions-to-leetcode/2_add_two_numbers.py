@@ -1,6 +1,9 @@
 """
 2. Add Two Numbers
 https://leetcode.com/problems/add-two-numbers/
+
+_author:            Kashif Memon
+_python_version:    3.7.2
 """
 
 

@@ -1,8 +1,10 @@
 """
 852. Peak Index in a Mountain Array
 https://leetcode.com/problems/peak-index-in-a-mountain-array/
-"""
 
+_author:            Kashif Memon
+_python_version:    3.7.2
+"""
 
 def peakIndexInMountainArray(A: 'List[int]') -> 'int':
     return A.index(max(A))

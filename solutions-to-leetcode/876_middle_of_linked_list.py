@@ -1,6 +1,9 @@
 """
 876. Middle of the Linked List
 https://leetcode.com/problems/middle-of-the-linked-list/
+
+_author:            Kashif Memon
+_python_version:    3.7.2
 """
 
 
