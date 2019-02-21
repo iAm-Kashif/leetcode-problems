@@ -9,12 +9,13 @@ _python_version:    3.7.2
 
 def findMedianSortedArrays(nums1: 'List[int]', nums2: 'List[int]') -> 'float':
     sorted_joined = sorted(nums1 + nums2)
+    print(sorted_joined)
     if len(sorted_joined) % 2 == 0:
-        print (len(sorted_joined)/2)
-        # print (sorted_joined[int(len(sorted_joined)/2)])
-        # return sorted_joined[(int((len(sorted_joined) + 1) / ))]
+        index = int(len(sorted_joined) / 2)
+        return (sorted_joined[index] + sorted_joined[index-1])/2
     else:
-        return sorted_joined[(int((len(sorted_joined) + 1) / 2))]
+        index = (int(len(sorted_joined)/2))
+        return sorted_joined[index]
 
 
 def main():
