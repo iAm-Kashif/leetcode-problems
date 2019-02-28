@@ -1,6 +1,6 @@
 """
-1. Two Sum
-https://leetcode.com/problems/two-sum/
+760. Find Anagram Mappings
+Locked.
 
 _author:            Kashif Memon
 _python_version:    3.7.2
