@@ -18,19 +18,21 @@ class Solution:
     out = []
 
     def inorderTraversal(self, root: TreeNode) -> 'List[int]':
-        # return (self.inorderTraversal(root.left) + [root.val] + self.inorderTraversal(root.right)) if root else []
-        if root:
-            self.inorderTraversal(root.left)
-            self.out.append(root.val)
-            self.inorderTraversal(root.right)
-        return self.out
+        return (self.inorderTraversal(root.left) + [root.val] + self.inorderTraversal(root.right)) if root else []
+        # if root:
+        #     if root.val == "null":
+        #         return
+        #     self.inorderTraversal(root.left)
+        #     self.out.append(root.val)
+        #     self.inorderTraversal(root.right)
+        # return self.out
 
 
 def main():
     input1 = TreeNode(1)
-    # input1.left = TreeNode("null")
-    # input1.right = TreeNode(2)
-    # input1.right.left = TreeNode(3)
+    input1.left = TreeNode("null")
+    input1.right = TreeNode(2)
+    input1.right.left = TreeNode(3)
     print(Solution().inorderTraversal(input1))
 
 
