@@ -6,12 +6,13 @@ _author:            Kashif Memon
 _python_version:    3.7.2
 """
 
+
 def peakIndexInMountainArray(A: 'List[int]') -> 'int':
     return A.index(max(A))
 
 
 def main():
-    input1 = [0,1,0]
+    input1 = [0, 1, 0]
     # print(peakIndexInMountainArray(input1))
 
     input2 = [0, 2, 1, 0]
