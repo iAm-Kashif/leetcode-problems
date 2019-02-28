@@ -15,16 +15,15 @@ class ListNode:
 
 
 def hasCycle(head: 'ListNode') -> 'bool':
-    if not head:
+    try:
+        slow = head
+        fast = head.next
+        while slow is not fast:
+            slow = slow.next
+            fast = fast.next.next
+        return True
+    except:
         return False
-    tmp = []
-    while head.next:
-        tmp.append(head)
-        if head.next in tmp:
-            return True
-        tmp.append(head.next)
-        head = head.next
-    return False
 
 
 def main():
