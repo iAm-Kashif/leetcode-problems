@@ -8,9 +8,7 @@ _python_version:    3.7.2
 
 
 def binarySearch(nums: 'List[int]', target: 'int') -> 'int':
-    mid = int (len(nums) / 2)
-    for index in range(mid):
-        if target > nums[mid]
+    pass
 
 
 def main():
