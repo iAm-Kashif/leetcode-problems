@@ -30,7 +30,6 @@ class Solution:
 
 def main():
     input1 = TreeNode(1)
-    input1.left = TreeNode("null")
     input1.right = TreeNode(2)
     input1.right.left = TreeNode(3)
     print(Solution().inorderTraversal(input1))
