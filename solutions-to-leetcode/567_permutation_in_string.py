@@ -5,7 +5,6 @@ https://leetcode.com/problems/permutation-in-string/
 _author:            Kashif Memon
 _python_version:    3.7.2
 """
-from collections import Counter
 
 
 class Solution:
@@ -17,16 +16,22 @@ class Solution:
         return False
 
     def checkInclusion_hashmap(self, s1: str, s2: str) -> bool:
-        for i in range(0, len(s2) - len(s1) + 1):
-            for item in range(len(s1)):
-                print (s2[i:i + len(s1)])
-                if s1[item] not in s2[i:i + len(s1)]:
+        from collections import Counter
+        s1_hashmap = Counter(s1)
+        count = len(s1_hashmap)
+
+        print(s1_hashmap, count)
+
+        for index in range(len(s2) - len(s1) + 1):
+            subString = s2[index:index + len(s1)]
+
+            for letter in s1_hashmap:
+                print("Checking", letter, "in", subString)
+                if letter not in subString:
                     break
-                elif item == (len(s1)-1) and s1[item] in s2[i:i + len(s1)]:
-                    return True
-                else:
-                    continue
-        return False
+                for idx in range(s1_hashmap[letter]):
+
+
 
 
 def main():
@@ -37,13 +42,13 @@ def main():
     s22 = "eidboaoo"
     # print(Solution().checkInclusion_hashmap(s1, s22))
 
-    s13 = "adc"  # acd #3
-    s23 = "dcda"  # cdd acd # 4
-    # print(Solution().checkInclusion_hashmap(s13, s23))
+    s13 = "addc"  # acd #3
+    s23 = "bdcda"  # cdd acd # 4
+    print(Solution().checkInclusion_hashmap(s13, s23))
 
     s14 = "hello"
     s24 = "ooolleoooleh"
-    print(Solution().checkInclusion_hashmap(s14, s24))
+    # print(Solution().checkInclusion_hashmap(s14, s24))
 
 
 if __name__ == "__main__":

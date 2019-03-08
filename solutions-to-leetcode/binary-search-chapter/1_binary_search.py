@@ -8,24 +8,16 @@ _python_version:    3.7.2
 
 
 def binarySearch(nums: 'List[int]', target: 'int') -> 'int':
-    mid = int(len(nums) / 2)
-    print (nums, mid , nums[mid])
-
-    if nums[mid] == target:
-        return 1
-
-    if target < nums[mid]:
-        binarySearch(nums[:mid], target)
-    else:
-        binarySearch(nums[mid:], target)
-
-    return -1
+    mid = int (len(nums) / 2)
+    for index in range(mid):
+        if target > nums[mid]:
+            pass
 
 
 def main():
-    nums1 = [-1, 0, 3, 5, 9, 12, 17]
+    nums1 = [-1, 0, 3, 5, 9, 12]
     target1 = 9
-    print (binarySearch(nums1, target1))
+    binarySearch(nums1, target1)
 
     nums2 = [-1, 0, 3, 5, 9, 12]
     target2 = 2
