@@ -7,7 +7,7 @@ _python_version:    3.7.2
 """
 
 
-def diStringMatch(S: 'str') -> 'List[int]':
+def diStringMatch(S: str) -> 'List[int]':
     out = []
     val = 1
     for character in S:
