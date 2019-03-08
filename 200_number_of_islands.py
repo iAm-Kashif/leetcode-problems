@@ -47,6 +47,5 @@ def main():
     print(Solution().numIslands(input2))
 
 
-
 if __name__ == "__main__":
     main()
