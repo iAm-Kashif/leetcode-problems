@@ -1,2 +1,3 @@
-# leetcode-problems
-Pratice Programming for Leetcode.com problems
+# Leetcode-problem-solutions
+Contains files and directories for Leetcode.com problem solutions.
+
