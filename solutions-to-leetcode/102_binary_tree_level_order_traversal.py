@@ -1,6 +1,6 @@
 """
-Binary Tree Level Order Traversal
-https://leetcode.com/explore/interview/card/top-interview-questions-easy/94/trees/628/
+102. Binary Tree Level Order Traversal
+https://leetcode.com/problems/binary-tree-level-order-traversal/
 
 _author:            Kashif Memon
 _python_version:    3.7.2
