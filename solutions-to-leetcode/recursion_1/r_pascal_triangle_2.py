@@ -24,7 +24,7 @@ class Solution:
 
         if rowIndex == 0: return [1]
         ans = self.getRow(rowIndex - 1)
-        print (ans)
+        print(ans)
         return [1] + [sum(x) for x in zip(ans, ans[1:])] + [1]
 
 
