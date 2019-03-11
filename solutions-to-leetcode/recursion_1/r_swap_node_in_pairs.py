@@ -16,11 +16,14 @@ class ListNode:
 class Solution:
 
     def swapPairs(self, head: ListNode) -> ListNode:
-        while head is not None and head.next is not None:
-            self.swap(head)
+        if head is None: return None
+        if head.next is None: return head
 
-    def swap(self, head: ListNode) -> ListNode:
-        s
+        cur_node = head.next
+        next_node = self.swapPairs(cur_node.next)
+        head.next = next_node
+        cur_node.next = head
+        return cur_node
 
 
 def main():
@@ -29,7 +32,7 @@ def main():
     input1.next.next = ListNode(3)
     input1.next.next.next = ListNode(4)
 
-    print(Solution().swapPairs())
+    print(Solution().swapPairs(input1))
 
 
 if __name__ == "__main__":
