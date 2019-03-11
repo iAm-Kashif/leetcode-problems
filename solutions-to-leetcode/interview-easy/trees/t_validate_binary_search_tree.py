@@ -15,10 +15,17 @@ class TreeNode:
 
 
 class Solution:
-    depth = 0
-
     def isValidBST(self, root: TreeNode) -> bool:
-        pass
+        if root is None:
+            return True
+
+        return self.isBST(root, float("-inf"), float("inf"))
+
+    def isBST(self, root: TreeNode, low, high) -> bool:
+        if root is None:
+            return True
+        if not low < root.val < high: return False
+        return self.isBST(root.left, low, root.val) and self.isBST(root.right, root.val, high)
 
 
 def main():
@@ -27,14 +34,19 @@ def main():
     input1.right = TreeNode(20)
     input1.right.left = TreeNode(15)
     input1.right.right = TreeNode(7)
-    print(Solution().maxDepth(input1))
+    print(Solution().isValidBST(input1))
 
-    input2 = TreeNode(1)
-    input2.left = TreeNode(2)
-    input2.right = TreeNode(3)
-    input2.left.left = TreeNode(4)
-    input2.right.right = TreeNode(5)
-    # print(Solution().maxDepth(input2))
+    input2 = TreeNode(5)
+    input2.left = TreeNode(1)
+    input2.right = TreeNode(4)
+    input2.left.left = TreeNode(3)
+    input2.right.right = TreeNode(4)
+    # print(Solution().isValidBST(input2))
+
+    input3 = TreeNode(2)
+    input3.left = TreeNode(1)
+    input3.right = TreeNode(3)
+    print(Solution().isValidBST(input3))
 
 
 if __name__ == "__main__":
