@@ -9,7 +9,17 @@ _python_version:    3.7.2
 
 class Solution:
     def longestCommonPrefix(self, strs: 'List[str]') -> str:
-        
+        if len(strs) == 0:
+            return ""
+        word = min(strs, key=len)
+        out = ""
+
+        for idx in range(len(word)):
+            if all(word[idx] == x[idx] for x in strs):
+                out += word[idx]
+            else:
+                return out
+        return out
 
 
 def main():
