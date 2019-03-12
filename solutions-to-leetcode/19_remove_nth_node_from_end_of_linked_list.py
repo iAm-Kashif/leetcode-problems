@@ -1,6 +1,6 @@
 """
-Remove Nth Node From End of List
-https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/603/
+19. Remove Nth Node From End of List
+https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 
 _author:            Kashif Memon
 _python_version:    3.7.2
@@ -28,9 +28,6 @@ class Solution:
 def main():
     input1 = ListNode(1)
     input1.next = ListNode(2)
-    # input1.next.next = ListNode(3)
-    # input1.next.next.next = ListNode(4)
-    # input1.next.next.next.next = ListNode(5)
     print(Solution().removeNthFromEnd(input1, 2))
 
 
