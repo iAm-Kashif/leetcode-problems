@@ -1,6 +1,6 @@
 """
-Reverse Linked List
-https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/560/
+Merge 2 Sorted Linked Lists
+https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/771/
 
 _author:            Kashif Memon
 _python_version:    3.7.2
@@ -15,7 +15,17 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        pass
+        if l1 is None: return l2
+        if l2 is None: return l1
+
+        tmp = None
+        if l1.val <= l2.val:
+            tmp = l1
+            tmp.next = self.mergeTwoLists(l1.next, l2)
+        else:
+            tmp = l2
+            tmp.next = self.mergeTwoLists(l1, l2.next)
+        return tmp
 
 
 def main():
