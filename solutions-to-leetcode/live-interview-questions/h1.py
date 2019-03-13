@@ -15,39 +15,61 @@ _python_version:    3.7.2
 
 
 class Solution:
-    phoneHashMap = {}
-    common = {}
+    phoneMap = {}
+    differentNamesWithSamePhonenumber = {}
+    differentPhonenumberWithSameName = {}
 
     def analyze(self, log: 'List[str]') -> str:
 
         for item in log:
             item = item.split(", ")
-            # item[0] = name
-            # item[1] = #
+            log_name = item[0]
+            log_phone = item[1]
 
-            # check if name is coming second time
-            keyNum = self.valInHashMap(item[0])
-            if not keyNum == "-1":
-                self.phoneHashMap[keyNum].remove(item[0])
-                if keyNum in self.common.keys():
-                    self.common[keyNum].append(item[0])
+            # when name is already there in the phoneMap
+            numInPhoneMapforName = self.valInPhoneMap(log_name)
+            if not numInPhoneMapforName == "-1":
+                # name is in the phoneMap, so number is being updated
+                # remove name from PhoneMap with link from old number
+                # Add new number with the name in PhoneMap will be done down in the else.
+                self.phoneMap[numInPhoneMapforName].remove(log_name)
+
+                # As number got updated, add to differentNamesWithSamePhoneNumber for old PhoneNumber
+                # Need to check if Phonenumber already exists in differentNamesWithSamePhonenumber
+                # if Yes, append name
+                # else add a new entry
+                if numInPhoneMapforName in self.differentNamesWithSamePhonenumber.keys():
+                    self.differentNamesWithSamePhonenumber[numInPhoneMapforName].append(log_name)
                 else:
-                    self.common[keyNum] = [item[0]]
+                    self.differentNamesWithSamePhonenumber[numInPhoneMapforName] = [log_name]
 
-            # check if number is already in keys
-            if item[1] in self.phoneHashMap.keys():
-                self.phoneHashMap[item[1]].append(item[0])
+                # As same name is encountered, we need to track the same name for different numbers too.
+                # Add to differentPhonenumberWithSameName
+                if log_name in self.differentNamesWithSamePhonenumber.keys():
+                    self.differentPhonenumberWithSameName[log_name].append(numInPhoneMapforName)
+                else:
+                    self.differentPhonenumberWithSameName[log_name] = log_phone
+
+
+            if log_phone in self.phoneMap.keys():
+                # if phoneNumber is already in the phoneMap
+                # Update the phoneNumber to have multiple names
+                self.phoneMap[log_phone].append(log_name)
             else:
-                # number incoming first time
-                self.phoneHashMap[item[1]] = [item[0]]
-        print(self.phoneHashMap)
-        print(self.common)
+                # phoneNumber is the first of its kind.
+                self.phoneMap[log_phone] = [log_name]
 
-    def valInHashMap(self, val: str) -> str:
-        for k, v in self.phoneHashMap.items():
+        print(">>Map", self.phoneMap)
+        print(">>Same#", self.differentNamesWithSamePhonenumber)
+        print(">>SameName", self.differentPhonenumberWithSameName)
+
+
+    # Returns the key (phoneNumber) if the Name is in the [] of any key.
+    def valInPhoneMap(self, isSameName: str) -> str:
+        for key, v in self.phoneMap.items():
             for x in v:
-                if x == val:
-                    return k
+                if x == isSameName:
+                    return key
         return "-1"
 
 
@@ -61,11 +83,6 @@ def main():
         "Joe, 980-869-4998, 117"
     ]
     print(Solution().analyze(log=input1))
-
-    # name for first time = add to hashmap
-    # name for second time = remove from hashmap, add to common
-    # number for first time = add to hashmap
-    # number for second time, update hashmap to multiple values
 
 
 if __name__ == "__main__":
