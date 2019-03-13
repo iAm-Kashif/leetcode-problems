@@ -43,14 +43,6 @@ class Solution:
                 else:
                     self.differentNamesWithSamePhonenumber[numInPhoneMapforName] = [log_name]
 
-                # As same name is encountered, we need to track the same name for different numbers too.
-                # Add to differentPhonenumberWithSameName
-                if log_name in self.differentNamesWithSamePhonenumber.keys():
-                    self.differentPhonenumberWithSameName[log_name].append(numInPhoneMapforName)
-                else:
-                    self.differentPhonenumberWithSameName[log_name] = log_phone
-
-
             if log_phone in self.phoneMap.keys():
                 # if phoneNumber is already in the phoneMap
                 # Update the phoneNumber to have multiple names
@@ -59,10 +51,16 @@ class Solution:
                 # phoneNumber is the first of its kind.
                 self.phoneMap[log_phone] = [log_name]
 
+            # As same name is encountered, we need to track the same name for different numbers too.
+            # Add to differentPhonenumberWithSameName
+            if log_name in self.differentPhonenumberWithSameName.keys():
+                self.differentPhonenumberWithSameName[log_name].append(log_phone)
+            else:
+                self.differentPhonenumberWithSameName[log_name] = [log_phone]
+
         print(">>Map", self.phoneMap)
         print(">>Same#", self.differentNamesWithSamePhonenumber)
         print(">>SameName", self.differentPhonenumberWithSameName)
-
 
     # Returns the key (phoneNumber) if the Name is in the [] of any key.
     def valInPhoneMap(self, isSameName: str) -> str:
