@@ -24,7 +24,7 @@ class Solution:
 
         if left is None and right is None:
             return True
-        elif left is not None and left is not None:
+        elif left is not None and right is not None:
             if left.val == right.val:
                 return self.isMirror(left.left, right.right) and self.isMirror(left.right, right.left)
         return False
