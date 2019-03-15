@@ -14,7 +14,7 @@ class ListNode:
 
 
 class Solution:
-    def isPalindrome_1(self, head: ListNode) -> bool:
+    def isPalindrome(self, head: ListNode) -> bool:
         # Method 1 - Stack
         # Iterate over list, add to Stack
         # Iterate again and check pop() stack contents

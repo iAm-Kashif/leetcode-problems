@@ -34,7 +34,7 @@ def main():
     input1.right = TreeNode(20)
     input1.right.left = TreeNode(15)
     input1.right.right = TreeNode(7)
-    print(Solution().isValidBST(input1))
+    # print(Solution().isValidBST(input1))
 
     input2 = TreeNode(5)
     input2.left = TreeNode(1)
@@ -43,9 +43,9 @@ def main():
     input2.right.right = TreeNode(4)
     # print(Solution().isValidBST(input2))
 
-    input3 = TreeNode(2)
+    input3 = TreeNode(1)
     input3.left = TreeNode(1)
-    input3.right = TreeNode(3)
+    # input3.right = TreeNode(3)
     print(Solution().isValidBST(input3))
 
 

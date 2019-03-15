@@ -33,11 +33,6 @@ def addTwoNumbers(l1: 'ListNode', l2: 'ListNode') -> 'ListNode':
     return tmp.next
 
 
-
-
-
-
-
 def main():
     input11 = ListNode(2)
     input11.next = ListNode(4)
