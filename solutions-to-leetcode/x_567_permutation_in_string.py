@@ -30,6 +30,7 @@ class Solution:
                 if letter not in subString:
                     break
                 for idx in range(s1_hashmap[letter]):
+                    pass
 
 
 

@@ -14,11 +14,6 @@ class Solution:
         if sorted(t) == sorted(s):
             return True
         return False
-        # for ichar in s:
-        #     if ichar not in t:
-        #         return False
-        # return True
-
 
 
 def main():
