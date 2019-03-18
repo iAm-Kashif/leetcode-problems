@@ -9,7 +9,10 @@ _python_version:    3.7.2
 
 class Solution:
     def threeSum(self, nums: 'List[int]') -> 'List[List[int]]':
-        pass
+        if len(nums) < 3: return False
+        from itertools import permutations
+        sol = dict.fromkeys(tuple(sorted(i)) for i in permutations(nums, 3) if sum(i) == 0)
+        return sol.keys()
 
 
 def main():
