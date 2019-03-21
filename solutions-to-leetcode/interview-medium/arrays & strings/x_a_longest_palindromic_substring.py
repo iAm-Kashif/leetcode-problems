@@ -15,7 +15,7 @@ class Solution:
         subStrings = []
         sub = ""
         for idx in range(len(s)):
-            print (idx, s[idx], reverse[idx])
+            print(idx, s[idx], reverse[idx])
             if s[idx] == reverse[idx]:
                 sub += s[idx]
             elif not s[idx] == reverse[idx]:
@@ -23,9 +23,6 @@ class Solution:
                     subStrings.append(sub)
                 sub = ""
         return max(subStrings)
-
-
-
 
 
 def main():
