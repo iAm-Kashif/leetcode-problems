@@ -10,11 +10,23 @@ _python_version:    3.7.2
 class Solution:
     def increasingTriplet(self, nums: 'List[int]') -> bool:
 
-        for idx in range(len(nums) - 2):
-            print(str(nums[idx]) + "<" + str(nums[idx + 1]) + "<" + str(nums[idx + 2]))
-            if nums[idx] < nums[idx + 1] < nums[idx + 2]:
+        first = second = float("inf")
+        for val in nums:
+            if val <= first:
+                first = val
+            elif val <= second:
+                second = val
+            else:
                 return True
         return False
+
+        # Wrong approach
+        # only works for CONSECUTIVE items in list
+        # for idx in range(len(nums) - 2):
+        #     print(str(nums[idx]) + "<" + str(nums[idx + 1]) + "<" + str(nums[idx + 2]))
+        #     if nums[idx] < nums[idx + 1] < nums[idx + 2]:
+        #         return True
+        # return False
 
 
 def main():
