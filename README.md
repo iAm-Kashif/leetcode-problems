@@ -1,3 +1,6 @@
-# Leetcode-problem-solutions
-Contains files and directories for Leetcode.com problem solutions.
+# README.
+This project contains:
+* Leetcode Solutions
+* HiredInTech Solutions
+
 
