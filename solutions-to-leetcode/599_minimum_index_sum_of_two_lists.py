@@ -23,18 +23,15 @@ class Solution:
         return out
 
 
-
-
-
-
 def main():
     l11 = ["Shogun", "Tapioca Express", "Burger King", "KFC"]
     l12 = ["Piatti", "The Grill at Torrey Pines", "Hungry Hunter Steakhouse", "Shogun"]
     # print(Solution().findRestaurant(l11, l12))
 
-    l21 = ["Shogun","Tapioca Express","Burger King","KFC"]
+    l21 = ["Shogun", "Tapioca Express", "Burger King", "KFC"]
     l22 = ["KFC", "Shogun", "Burger King"]
     print(Solution().findRestaurant(l21, l22))
+
 
 if __name__ == "__main__":
     main()
