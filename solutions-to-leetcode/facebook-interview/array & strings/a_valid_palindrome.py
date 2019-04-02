@@ -13,11 +13,12 @@ class Solution:
         import re
         s = re.sub(r"\W", "", s).lower()
 
-        for idx in range(len(s) // 2):
-            if not s[idx] == s[-(idx + 1)]:
-                return False
-        else:
-            return True
+        return s == s[::-1]
+        # for idx in range(len(s) // 2):
+        #     if not s[idx] == s[-(idx + 1)]:
+        #         return False
+        # else:
+        #     return True
 
 
 def main():
