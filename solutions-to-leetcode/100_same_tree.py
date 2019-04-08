@@ -16,17 +16,26 @@ class TreeNode:
 
 class Solution:
     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+
+        # Really Short solution
+        # if p is None or q is None: return p == q
+        # return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+
+        # Longer Approach
         if p is None and q is None: return True
-        if p is not None and q is None: return False
-        if p is None and q is not None:
+        if not p or not q:
             return False
+        # if p is not None and q is None: return False
+        # if p is None and q is not None:
+        #     return False
         elif p is not None and q is not None:
             return self.isSame(p, q)
 
     def isSame(self, p: TreeNode, q: TreeNode) -> bool:
         if p is None and q is None: return True
-        if p is not None and q is None: return False
-        if p is None and q is not None: return False
+        if not p or not q: return False
+        # if p is not None and q is None: return False
+        # if p is None and q is not None: return False
         if p.left is None and q.left is not None: return False
         if p.left is not None and q.left is None: return False
         if p.left is None and q.left is not None: return False
