@@ -20,7 +20,6 @@ class Solution:
         return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 
 
-
 def main():
     input1 = TreeNode(1)
     input1.left = TreeNode(2)

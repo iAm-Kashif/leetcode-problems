@@ -16,7 +16,23 @@ class TreeNode:
 
 class Solution:
     def flatten(self, root: TreeNode) -> None:
-        pass
+        if not root: return None
+
+        stack = [root]
+        curr_node = root
+
+        while stack:
+            node = stack.pop()
+            curr_node.val = node.val
+
+            if node.right: stack.append(node.right)
+            if node.left: stack.append(node.left)
+
+            curr_node.left = None
+
+            if stack:
+                curr_node.right = TreeNode(None)
+                curr_node = curr_node.right
 
 
 def main():
@@ -27,7 +43,7 @@ def main():
     input1.right = TreeNode(5)
     input1.right.right = TreeNode(6)
 
-    print(Solution().flatten(input1,))
+    print(Solution().flatten(input1, ))
 
 
 if __name__ == "__main__":
