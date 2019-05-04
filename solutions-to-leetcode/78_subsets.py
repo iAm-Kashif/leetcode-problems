@@ -19,6 +19,7 @@ class Solution:
         # Using Recursion
         if not nums: return [[]]
         res_subsets = self.subsets(nums[1:])
+        print("r", res_subsets)
         return res_subsets + [[nums[0]] + i for i in res_subsets]
 
 

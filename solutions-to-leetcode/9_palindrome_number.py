@@ -14,13 +14,7 @@ class Solution:
 
 
 def main():
-    nums11 = [1, 3]
-    nums12 = [2]
-    # print("The median is", findMedianSortedArrays(nums11, nums12))
-
-    nums21 = [1, 2]
-    nums22 = [3, 4]
-    print("The median is", findMedianSortedArrays(nums21, nums22))
+    pass
 
 
 if __name__ == "__main__":
