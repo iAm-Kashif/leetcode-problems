@@ -16,8 +16,6 @@ class Solution:
                 if word == s[idx - len(word) + 1:idx + 1] and (dp[idx - len(word)] or idx - len(word) == -1):
                     dp[idx] = True
                     break
-        print (dp)
-
         return dp[-1]
 
 
