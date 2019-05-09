@@ -22,6 +22,7 @@ class Solution:
             for idx in range(L):
                 wordDict[word[:idx] + "*" + word[idx + 1:]].append(word)
 
+        # {'*ot': ['hot', 'dot', 'lot'], 'h*t': ['hot'], 'ho*': ['hot'],
         # wordLadder Traverse using Queue (BFS)
         q = [(beginWord, 1)]
         visited = {beginWord: True}

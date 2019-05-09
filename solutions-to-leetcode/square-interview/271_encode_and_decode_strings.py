@@ -19,12 +19,12 @@ class Codec:
             j = s.find(':', i)
             i = j + 1 + int(s[i:j])
             strs.append(s[j + 1:i])
-        return strs
+        return "".join(strs)
 
 
 def main():
-    print(Codec().encode("hello"))
-
+    in1 = Codec().encode("hello")
+    print(Codec().decode(in1))
 
 if __name__ == "__main__":
     main()
