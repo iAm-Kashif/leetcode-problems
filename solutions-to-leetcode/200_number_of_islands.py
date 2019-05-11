@@ -20,15 +20,15 @@ class Solution:
         for i in range(rows):
             for j in range(columns):
                 val = grid[i][j]
-                print(">> Considering({},{}); Val: {}".format(i, j, val))
+                # print(">> Considering({},{}); Val: {}".format(i, j, val))
 
-                if val == "1":
+                if val == 0:
                     self.dfs(grid, i, j)
                     count += 1
         return count
 
     def dfs(self, grid, i, j):
-        if i < 0 or j < 0 or i >= len(grid) or j >= len(grid[0]) or grid[i][j] != "1":
+        if i < 0 or j < 0 or i >= len(grid) or j >= len(grid[0]) or grid[i][j] != 0:
             return
         grid[i][j] = "#"
         self.dfs(grid, i + 1, j)
@@ -40,11 +40,23 @@ class Solution:
 def main():
     input1 = [["1", "1", "1", "1", "0"], ["1", "1", "0", "1", "0"], ["1", "1", "0", "0", "0"],
               ["0", "0", "0", "0", "0"]]
-    print(Solution().numIslands(input1))
+    # print(Solution().numIslands(input1))
 
     input2 = [["1", "1", "0", "0", "0"], ["1", "1", "0", "0", "0"], ["0", "0", "1", "0", "0"],
               ["0", "0", "0", "1", "1"]]
-    print(Solution().numIslands(input2))
+    # print(Solution().numIslands(input2))
+
+    image11 = [
+        [0, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 0, 0, 0, 1],
+        [1, 0, 1, 0, 0, 0, 1],
+        [1, 0, 1, 1, 1, 1, 1],
+        [1, 0, 1, 0, 0, 1, 1],
+        [1, 1, 1, 0, 0, 1, 1],
+        [1, 1, 1, 1, 1, 1, 0],
+    ]
+    print(Solution().numIslands(image11))
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 651. 4 Keys Keyboard
 https://leetcode.com/problems/4-keys-keyboard/
 
-_author:            Kashif Memon
+_author:            Kashif Mem6on
 _python_version:    3.7.2
 """
 
