@@ -39,7 +39,6 @@ class Solution:
         for i in range(rows):
             for j in range(columns):
                 val = grid[i][j]
-                # print(">> Considering({},{}); Val: {}".format(i, j, val))
 
                 if val == 0:
                     start = (i, j)
@@ -58,4 +57,4 @@ class Solution:
         self.dfs(grid, i, j + 1)
 
 
-print(Solution().numIslands(image3))
+print(Solution().numIslands(image1))
