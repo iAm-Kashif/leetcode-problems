@@ -24,7 +24,7 @@ class Solution:
     def checkLetters(self, board: 'List[List[str]]', idx: int, jdx: int, word: str) -> bool:
         if len(word) == 0:
             return True
-        if idx < 0 or jdx < 0 or idx > len(board) - 1 or jdx > len(board[0]) - 1 or board[idx][jdx] != word[0]:
+        if idx < 0 or jdx < 0 or idx >=len(board) or jdx >= len(board[0]) or board[idx][jdx] != word[0]:
             return False
         tmp = board[idx][jdx]
         board[idx][jdx] = "#"
