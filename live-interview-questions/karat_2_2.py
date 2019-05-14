@@ -2,7 +2,7 @@
 # Check if from every open position in the grid, can the end position be reached.
 
 
-class Solution1:  # Legal Moves for a player with walls in the grid.
+class Solution1: 
     # This solution starts with the end location
     # propogates in all 4 directions to find all positions that it can reach
     # Once done, if 0 in grid -> that means it cannot be reached -> return False
