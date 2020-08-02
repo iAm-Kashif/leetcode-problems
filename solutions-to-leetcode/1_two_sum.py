@@ -9,7 +9,7 @@ _python_version:    3.7.2
 
 def twoSum(nums: 'List[int]', target: 'int') -> 'List[int]':
     dict = {}
-    for i in range(0, len(nums)):
+    for i in range(len(nums)):
         if nums[i] in dict:
             return [dict[nums[i]], i]
     else:

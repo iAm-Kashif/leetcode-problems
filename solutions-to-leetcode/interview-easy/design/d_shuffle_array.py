@@ -8,7 +8,7 @@ _python_version:    3.7.2
 
 class Solution(object):
 
-    def __init__(self, nums: List[int]):
+    def __init__(self, nums: 'List[int]'):
         self._array = nums
 
     def reset(self) -> 'List[int]':
