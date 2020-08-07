@@ -8,7 +8,6 @@ _python_version:    3.7.2
 
 
 class Solution:
-    out = []
 
     def generateParenthesis(self, n):
         def generate(p, left, right, parens=[]):
@@ -21,7 +20,7 @@ class Solution:
 
 
 def main():
-    print(Solution().generateParenthesis(1))
+    print(Solution().generateParenthesis(3))
 
 
 if __name__ == "__main__":

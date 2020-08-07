@@ -5,7 +5,6 @@ class Solution:
         return False
 
 
-
 def main():
     print(Solution().detectCapitalUse("USA"))
     print(Solution().detectCapitalUse("flaG"))
